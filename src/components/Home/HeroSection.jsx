@@ -1,5 +1,4 @@
-import heroSection from '../assets/heroSection.jpg'
-import dogButtler from '../assets/dogButtler.png'
+import dogButtler from '../../assets/dogButtler.png'
 const HeroSection = () => {
     return (
         <>
