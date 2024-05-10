@@ -1,4 +1,4 @@
-import food from '../assets/food.jpg';
+import food from '../../assets/food.jpg';
 const DemoPage = () => {
     return (
         <>

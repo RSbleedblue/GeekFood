@@ -1,4 +1,4 @@
-import commentPic from '../assets/comment.jpg'
+import commentPic from '../../assets/comment.jpg'
 const Cards = () => {
     return (
         <>
