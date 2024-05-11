@@ -9,11 +9,11 @@ const ResCard = ({title, address, postalCode, rating, foodType, share}) => {
                 <div className="w-full flex justify-between items-center">
                     <p className="text-xl font-semibold">{title}</p>
                     <div className="flex gap-2">
-                        <FaStar className="text-yellow-400 text-2xl "/>
-                        <FaStar className="text-yellow-400 text-2xl "/>
-                        <FaStar className="text-yellow-400 text-2xl "/>
-                        <FaStar className="text-yellow-400 text-2xl "/>
-                        <FaStar className="text-yellow-400 text-2xl "/>
+                        {
+                            [...Array(5)].map((_,index) => (
+                                <FaStar key={index} className={`text-${index < rating ? 'yellow' : 'gray'}-400 text-2xl `}/>
+                            ))
+                        }
                     </div>      
                 </div>
                 <div className="flex items-center gap-2 ">
