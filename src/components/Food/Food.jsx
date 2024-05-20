@@ -6,6 +6,7 @@ import FoodPopularCards from "./FoodPopularCards";
 import axios from 'axios';
 import FoodSearchResults from "./FoodSearchResults";
 import FoodPopularDishes from "./FoodPopularDishes";
+import { Outlet } from "react-router-dom";
 
 const Food = () => {
     const [foodItem, setFoodItem] = useState("");
@@ -101,6 +102,7 @@ const Food = () => {
                         <FoodPopularCards key={category.idCategory} props={category} />
                     ))}
                 </div>
+                <Outlet/>
             </div>
             <div className="w-full mt-14 mb-10">
                 <p className="text-3xl font-semibold text-sky-800">POPULAR DISHES</p>
