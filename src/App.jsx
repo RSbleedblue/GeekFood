@@ -1,10 +1,11 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Outlet } from "react-router-dom";
 import NavBar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Quotes from "./components/Quotes/Quotes";
 import Home from "./components/Home/Home";
 import Restaurants from "./components/Restaurants/Restaurants";
 import Food from "./components/Food/Food";
+import FoodCategory from "./components/Food/FoodCategoryPage";
 
 function App() {
   return (
@@ -15,7 +16,9 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/quote" element= {<Quotes/>} />
           <Route path="/restaurants" element = {<Restaurants/>}/>
-          <Route path="/foods" element = {<Food/>}/>
+          <Route path="/foods" element = {<Food/>}>
+            <Route path=":categoryId" element = {<FoodCategory/>}/>
+          </Route>
         </Routes>
         <Footer />
       </div>

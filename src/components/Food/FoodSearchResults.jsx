@@ -1,3 +1,5 @@
+import MenuTransitions from "./FoodShowRecipe";
+
 const FoodSearchResults = ({item}) => {
     return (
         <>
@@ -24,7 +26,7 @@ const FoodSearchResults = ({item}) => {
                     <p className="rounded-lg shadow-xl p-2">{item.strIngredient7}</p>
                     <p className="rounded-lg shadow-xl p-2">{item.strIngredient8}</p>
                 </div>
-                <p></p>
+                <MenuTransitions props={item.strInstructions}/>
             </div>
 
         </>
