@@ -5,6 +5,7 @@ import { FaMagnifyingGlass } from "react-icons/fa6";
 import FoodPopularCards from "./FoodPopularCards";
 import axios from 'axios';
 import FoodSearchResults from "./FoodSearchResults";
+import FoodPopularDishes from "./FoodPopularDishes";
 
 const Food = () => {
     const [foodItem, setFoodItem] = useState("");
@@ -21,8 +22,8 @@ const Food = () => {
             }
         };
         fetchDataPopular();
-    }, []); 
-    
+    }, []);
+
     const handleSearch = async () => {
         if (foodItem.trim() === "") {
             setSearchResult([]);
@@ -46,9 +47,9 @@ const Food = () => {
     }, [foodItem]);
 
     return (
-        <div className="flex flex-col p-2 mt-[6%] items-start w-[80%]">
+        <div className="flex flex-col p-2 mt-[6%] items-start w-[70%]">
             <div className="flex w-full">
-                <div className="flex flex-col p-2 w-[50%] mt-10 gap-10">
+                <div className="flex flex-col p-2 w-[60%] mt-10 gap-10">
                     <p className="text-[40px] text-sky-600 w-full">All foods are available at GeekFood!</p>
                     <div className="w-[50%] flex items-center gap-2">
                         <img className="w-6 h-6 rounded-full" src={profile} alt="Profile" />
@@ -56,18 +57,41 @@ const Food = () => {
                     </div>
                     <div className="flex rounded-full w-64 gap-2 items-center border border-solid border-sky-700 border-opacity-30 p-2">
                         <FaMagnifyingGlass className="ml-4 text-3xl text-sky-500 cursor-pointer" />
-                        <input 
-                            className="rounded-lg p-2 focus:outline-none text-sky-700" 
+                        <input
+                            className="rounded-lg p-2 focus:outline-none text-sky-700"
                             placeholder="Search Your food"
                             value={foodItem}
-                            onChange={(e) => setFoodItem(e.target.value)} 
+                            onChange={(e) => setFoodItem(e.target.value)}
                         />
                     </div>
                 </div>
                 {searchResult.length > 0 && foodItem.length > 0 ? (
                     <FoodSearchResults item={searchResult[0]} />
                 ) : (
-                    <img src={food} className="h-[350px] ml-[20%]" alt="Food" />
+                    <div className="w-[40%] mt-10 rounded-lg shadow-xl flex flex-col p-4 gap-2  transition-all">
+                        <p className="text-3xl text-sky-700 mb-4">Pizza Margeritta</p>
+                        <div className="w-full flex items-center gap-4">
+                            <div className="w-20 h-20 rounded-full shadow-xl bg-sky-200 items-center flex justify-center">
+                                <img src="https://www.themealdb.com/images/media/meals/x0lk931587671540.jpg" className="rounded-full w-[95%] h-[95%] " />
+                            </div>
+                            <div className=" text-sky-800 flex flex-col gap-2 w-[20%]">
+                                <p><span>Category: </span>Pizza</p>
+                                <p className="text-[10px] rounded-full shadow text-center">Italian</p>
+                            </div>
+                        </div>
+                        <p className="text-sky-600">Ingredients</p>
+                        <div className="w-full flex gap-2 text-[10px] flex-wrap">
+                            <p className="rounded-lg shadow-xl p-2">pizza</p>
+                            <p className="rounded-lg shadow-xl p-2">Onion</p>
+                            <p className="rounded-lg shadow-xl p-2">Cheeze</p>
+                            <p className="rounded-lg shadow-xl p-2">Garlic</p>
+                            <p className="rounded-lg shadow-xl p-2">pizza</p>
+                            <p className="rounded-lg shadow-xl p-2">Onion</p>
+                            <p className="rounded-lg shadow-xl p-2">Cheeze</p>
+                            <p className="rounded-lg shadow-xl p-2">Garlic</p>
+                        </div>
+                        <p></p>
+                    </div>
                 )}
             </div>
             <div className="w-full mt-14 mb-10">
@@ -77,6 +101,10 @@ const Food = () => {
                         <FoodPopularCards key={category.idCategory} props={category} />
                     ))}
                 </div>
+            </div>
+            <div className="w-full mt-14 mb-10">
+                <p className="text-3xl font-semibold text-sky-800">POPULAR DISHES</p>
+                <FoodPopularDishes />
             </div>
         </div>
     );

@@ -2,7 +2,7 @@ const FoodSearchResults = ({item}) => {
     return (
         <>
 
-            <div className="w-[30%] mt-10 rounded-lg shadow-xl flex flex-col p-4 gap-2 ml-[20%] transition-all">
+            <div className="w-[40%] mt-10 rounded-lg shadow-xl flex flex-col p-4 gap-2  transition-all">
                 <p className="text-3xl text-sky-700 mb-4">{item.strMeal}</p>
                 <div className="w-full flex items-center gap-4">
                     <div className="w-20 h-20 rounded-full shadow-xl bg-sky-200 items-center flex justify-center">
