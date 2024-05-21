@@ -17,8 +17,8 @@ function App() {
           <Route path="/quote" element= {<Quotes/>} />
           <Route path="/restaurants" element = {<Restaurants/>}/>
           <Route path="/foods" element = {<Food/>}>
-            <Route path=":categoryId" element = {<FoodCategory/>}/>
           </Route>
+          <Route path="/foods/:categoryId" element = {<FoodCategory/>}/>
         </Routes>
         <Footer />
       </div>
