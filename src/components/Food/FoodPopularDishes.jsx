@@ -30,6 +30,11 @@ const FoodPopularDishes = () => {
         return `https://www.youtube.com/embed/${videoId}`;
     };
 
+    const splitRecipe = (recipe) => {
+        const sentences = recipe.split(/(?<=[.!?])\s+/);
+        return sentences;
+    };
+
     return (
         <>
             {popularFood.length > 0 && (
@@ -40,7 +45,7 @@ const FoodPopularDishes = () => {
                             <div className="w-64 rounded-full flex justify-center items-center bg-sky-300 overflow-clip">
                                 <img
                                     src={popularFood[0].strMealThumb}
-                                    className="w-[96%] h-[98%]  rounded-full hover:scale-125 transition-all cursor-pointer"
+                                    className="w-[96%] h-[98%] rounded-full hover:scale-125 transition-all cursor-pointer"
                                     alt={popularFood[0].strMeal}
                                 />
                             </div>
@@ -61,16 +66,24 @@ const FoodPopularDishes = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="flex  flex-col justify-center items-center lg:w-1/3 w-full rounded-lg shadow-xl p-2 gap-2 h-full">
+                        <div className="flex flex-col justify-center items-center lg:w-1/3 w-full rounded-lg shadow-xl p-2 gap-2 h-full">
                             <p className="text-lg text-sky-800">Tutorial</p>
                             <iframe
-                                className="w-full  lg:h-auto"
+                                className="w-full lg:h-auto"
                                 src={getYouTubeEmbedUrl(popularFood[0].strYoutube)}
                                 frameBorder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowFullScreen
                                 title="YouTube Video"
                             ></iframe>
+                        </div>
+                    </div>
+                    <div className="w-full rounded-lg shadow-xl shadow-sky-100 p-4">
+                        <p className="text-xl text-sky-900 mb-3">Recipe</p>
+                        <div className="flex flex-col gap-2">
+                            {splitRecipe(popularFood[0].strInstructions).map((ele, indx) => (
+                                <p key={indx} className="text-sm text-gray-800">{indx+1}. {ele}</p>
+                            ))}
                         </div>
                     </div>
                 </div>
