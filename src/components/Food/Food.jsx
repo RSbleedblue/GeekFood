@@ -106,7 +106,7 @@ const Food = () => {
                 </div>
             </div>
             <div className="w-full mt-14 mb-10">
-                <p className="text-3xl font-semibold text-sky-800">POPULAR DISHES</p>
+                <p className="text-3xl font-semibold text-sky-800">POPULAR DISH</p>
                 <FoodPopularDishes />
             </div>
         </div>
