@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { FaLocationDot } from "react-icons/fa6";
-import { MdCategory } from "react-icons/md";
 
 const FoodPopularDishes = () => {
     const [popularFood, setPopularFood] = useState([]);
@@ -41,7 +40,7 @@ const FoodPopularDishes = () => {
                             <div className="w-64 rounded-full flex justify-center items-center bg-sky-300 overflow-clip">
                                 <img
                                     src={popularFood[0].strMealThumb}
-                                    className="w-[96%] h-[96%] object-fit rounded-full hover:scale-125 transition-all cursor-pointer"
+                                    className="w-[96%] h-[98%]  rounded-full hover:scale-125 transition-all cursor-pointer"
                                     alt={popularFood[0].strMeal}
                                 />
                             </div>
@@ -51,7 +50,6 @@ const FoodPopularDishes = () => {
                                     <p className="text-3xl text-sky-500">{popularFood[0].strArea}</p>
                                 </div>
                                 <div className="flex items-center gap-3">
-                                    <MdCategory className="text-[40px] text-sky-900" />
                                     <p className="text-sm text-white rounded-lg bg-sky-500 p-2 hover:bg-sky-600 cursor-pointer">
                                         {popularFood[0].strCategory}
                                     </p>
