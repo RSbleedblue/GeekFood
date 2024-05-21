@@ -54,7 +54,7 @@ const Food = () => {
                     <p className="text-[40px] text-sky-600 w-full">All foods are available at GeekFood!</p>
                     <div className="w-[50%] flex items-center gap-2">
                         <img className="w-6 h-6 rounded-full" src={profile} alt="Profile" />
-                        <p className="text-sm text-slate-500">We at geekfood serve your craving desire for best foods</p>
+                        <p className="text-sm text-slate-500">We at geekfood serve your craving desire for best food</p>
                     </div>
                     <div className="flex rounded-full w-64 gap-2 items-center border border-solid border-sky-700 border-opacity-30 p-2">
                         <FaMagnifyingGlass className="ml-4 text-3xl text-sky-500 cursor-pointer" />
