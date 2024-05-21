@@ -24,7 +24,7 @@ const Restaurants = () => {
         <div className="flex justify-between w-full p-2 items-center">
           <input
             placeholder="Search Restaurants"
-            className="p-2  border border-solid border-black border-opacity-30"
+            className="p-2  border border-solid border-sky-500  focus: outline-none rounded-lg"
             value={restaurant}
             onChange={searchResto}
           />
@@ -35,7 +35,7 @@ const Restaurants = () => {
               min={0}
               max={5}
               placeholder="0"
-              className="p-2 border border-solid border-black border-opacity-30 w-10 text-center"
+              className="p-2 border border-solid border-sky-500 w-10 text-center focus:outline-none rounded-lg"
               value={rating}
               onChange={searchRating}
             />
@@ -51,6 +51,7 @@ const Restaurants = () => {
               rating={ele.rating}
               foodType={ele.type_of_food}
               share={ele.URL}
+          
             />
           ))}
         </div>
